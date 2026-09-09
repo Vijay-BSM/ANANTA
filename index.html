@@ -1,0 +1,1691 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANANTA — Endless Love. Eternal Bond.</title>
+<meta name="description" content="designer, creator, AI educator — Singapore">
+<style>
+@font-face {
+  font-family: 'Bremlin';
+  src: url('meng-to-sketchbook/fonts/Bremlin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(meng-to-sketchbook/instrument-serif.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+  src: url(meng-to-sketchbook/instrument-serif-italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 200 600;
+  font-display: swap;
+  src: url(meng-to-sketchbook/newsreader.woff2) format('woff2');
+}
+
+/* ---------------- ANANTA HIGH-CONTRAST CRISP TYPOGRAPHY SYSTEM ---------------- */
+:root {
+  --paper: #F7F0DF;       /* Warm Ivory */
+  --ink: #1C140E;         /* Deep High-Contrast Dark Espresso */
+  --ink-soft: #2B231B;    /* Crisp Dark Coffee (No blurry transparency) */
+  --ink-faint: #3B3126;   /* Solid Dark Charcoal */
+  --hairline: rgba(232, 196, 106, 0.45);
+  --vermilion: #B9472E;   /* Selective Vermilion Accent */
+  --earth: #B9472E;
+  --teal: #0F4C45;        /* Deep Teal */
+  --forest: #16352F;      /* Forest Ink */
+  --marigold: #D99A24;    /* Royal Marigold */
+  --gold: #E8C46A;        /* Antique Gold */
+  --gold-glow: rgba(232, 196, 106, 0.35);
+  --display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Newsreader', Georgia, serif;
+  --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --track-caps: 0.16em;
+  --track-nav: 0.06em;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;-webkit-text-size-adjust:100%}
+body{
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: radial-gradient(ellipse at center, #F7F0DF 0%, #F1E7D1 65%, #E8DAB7 100%), url(meng-to-sketchbook/bg-wash.jpg) center top / cover no-repeat;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+::selection{background:var(--teal);color:var(--paper)}
+
+/* ---------------- BACKGROUND WASH ---------------- */
+.wash{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(ellipse at center, rgba(247,240,223,0.92) 0%, rgba(241,231,209,0.95) 100%), url(meng-to-sketchbook/bg-wash.jpg) center top / cover no-repeat;
+  opacity:.95;
+}
+.wash:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(247,240,223,.25) 0%,rgba(241,231,209,.72) 58%,var(--paper) 88%);
+}
+
+/* ---------------- TOP FIXED NAVIGATION BAR ---------------- */
+.top{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding-inline:clamp(16px,4vw,48px);padding-block:14px 44px;pointer-events:none;text-align:center;
+}
+.top>*{pointer-events:auto}
+.top:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(247,240,223,.98),rgba(241,231,209,.88) 70%,rgba(241,231,209,0));
+  border-bottom:1.5px solid var(--gold);
+  box-shadow:0 4px 18px var(--gold-glow);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  -webkit-mask-image:linear-gradient(180deg,#000 52%,transparent);
+  mask-image:linear-gradient(180deg,#000 52%,transparent);
+}
+
+.top .name{
+  font-family:'Bremlin', serif;
+  font-size:clamp(26px,2.8vw,34px);
+  font-weight:normal;
+  letter-spacing:0.12em;
+  line-height:1;
+  color:var(--teal);
+  text-shadow:0 1px 3px rgba(232,196,106,0.3);
+}
+
+.top nav{
+  display:flex;gap:clamp(16px,2.4vw,28px);align-items:center;
+}
+.top nav a{
+  font-family:var(--font-ui);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:var(--track-nav);
+  color:var(--forest);
+  transition:all .2s ease;
+}
+.top nav a:hover,.top nav a[aria-current]{
+  color:var(--marigold);
+  transform:translateY(-1px);
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero{
+  position:relative;display:grid;justify-items:center;align-content:center;
+  min-height:92svh;overflow-anchor:none;
+  padding:clamp(100px,11svh,130px) 0 clamp(40px,6svh,70px);
+}
+
+.botany{
+  position:absolute;bottom:0;width:clamp(110px,14vw,220px);opacity:.5;
+  pointer-events:none;user-select:none;z-index:0;
+}
+.botany.l{left:clamp(-30px,-1vw,0px);bottom:2%}
+.botany.r{right:clamp(-20px,0vw,10px);bottom:-2%;width:clamp(90px,11vw,180px)}
+@media (max-width:900px){.botany{display:none}}
+
+/* Hero Kicker Pill Subtitle (Ultra Crisp Sans-Serif) */
+.hero-kicker{
+  font-family:var(--font-ui);
+  font-size:clamp(12px,1.2vw,15px);
+  font-weight:600;
+  color:var(--forest);
+  background:rgba(255,253,245,0.95);
+  padding:7px 22px;
+  border-radius:999px;
+  border:1.5px solid var(--gold);
+  box-shadow:0 4px 14px var(--gold-glow);
+  margin:0 0 clamp(16px,2.8vh,30px);
+  text-align:center;
+  letter-spacing:0.06em;
+}
+
+.hero-down{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);border:0;background:transparent;
+  padding:8px 12px;color:var(--teal);cursor:pointer;-webkit-tap-highlight-color:transparent;
+  animation:cue-breathe 2.6s ease-in-out infinite;z-index:3;
+}
+.hero-down:hover{animation:none;opacity:1}
+@keyframes cue-breathe{0%,100%{opacity:.2}50%{opacity:.8}}
+
+/* ---------------- 3D SKETCHBOOK CONTAINER ---------------- */
+.hero,.hero *{-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.hero img{-webkit-user-drag:none;user-drag:none}
+
+.sb-wrap{display:grid;justify-items:center;gap:16px;width:100%;position:relative;z-index:2}
+.sb-stage{
+  display:flex;align-items:center;justify-content:center;width:100%;
+  position:relative;touch-action:pan-y;
+}
+.sb-arrow{
+  flex:none;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;
+  border:0;background:transparent;color:var(--teal);cursor:pointer;transition:all .2s ease;
+  -webkit-tap-highlight-color:transparent;z-index:200 !important;position:relative;pointer-events:auto !important;
+}
+.sb-arrow:hover{color:var(--marigold);transform:scale(1.15);}
+.sb-arrow svg{width:20px;height:48px;pointer-events:none;}
+
+/* Book frame sized perfectly (Max 740px width on desktop) */
+.sb-3d{
+  position:relative;flex:1 1;min-width:0;
+  max-width:clamp(320px, 54vw, 740px);
+  perspective:1750px;perspective-origin:50% 46%;
+}
+.sb-tilt{
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--zoom,1));
+  will-change:transform;
+}
+.sb-book{
+  position:relative;width:100%;aspect-ratio:1760/1240;transform-style:preserve-3d;z-index:1;
+  border:3px solid var(--gold);
+  border-radius:5px;
+  box-shadow:0 0 0 2px var(--teal), 0 20px 50px rgba(43,39,33,0.3) !important;
+}
+
+.sb-cast{position:absolute;pointer-events:none;z-index:0}
+.sb-cast.ambient{
+  left:5%;right:5%;top:27%;bottom:2%;
+  background:radial-gradient(50% 50% at 50% 58%, rgba(58,44,26,.30) 0%, rgba(58,44,26,0) 74%);
+  filter:blur(22px);opacity:calc(1 - var(--shade,0) * .42);
+}
+.sb-cast.contact{
+  left:9%;right:9%;top:62%;bottom:10%;
+  background:radial-gradient(50% 44% at 50% 42%, rgba(44,32,14,.35) 0%, rgba(44,32,14,0) 78%);
+  filter:blur(10px);opacity:calc(1 - var(--shade,0) * .5);
+}
+
+.sb-full{position:absolute;inset:0}
+.sb-full img{width:100%;height:auto;display:block}
+.sb-half{position:absolute;top:0;bottom:0;width:50%;overflow-x:clip;overflow-y:visible}
+.sb-half.left{left:0}
+.sb-half.right{left:50%}
+.sb-half-img{width:200%;max-width:none;height:auto;display:block}
+.sb-half-img.right{margin-left:-100%}
+
+.gutter-shade{
+  position:absolute;top:var(--pg,21.8%);bottom:var(--pg,21.8%);width:46%;
+  pointer-events:none;opacity:calc(var(--shade,0) * .62);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 5.2%,#000 94.8%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 5.2%,#000 94.8%,transparent 100%);
+}
+.gutter-shade.left{right:0;background:linear-gradient(270deg,rgba(52,38,20,.30),rgba(52,38,20,0) 82%)}
+.gutter-shade.right{left:0;background:linear-gradient(90deg,rgba(52,38,20,.24),rgba(52,38,20,0) 82%)}
+
+.curl{
+  position:absolute;top:0;height:100%;
+  width:calc(var(--bw,0px) * var(--span));
+  transform-style:preserve-3d;z-index:6;
+}
+.curl.next{left:50%;transform-origin:left center;transform:rotateY(calc(-1 * var(--tt,0deg)))}
+.curl.prev{right:50%;transform-origin:right center;transform:rotateY(var(--tt,0deg))}
+.strip{
+  position:absolute;top:0;height:100%;
+  width:calc(var(--bw,0px) * var(--span) / var(--n));
+  transform-style:preserve-3d;
+}
+.curl.next .strip{transform-origin:left center}
+.curl.prev .strip{transform-origin:right center}
+.curl.next>.strip{left:0}
+.curl.prev>.strip{right:0;left:auto}
+.curl.next .strip .strip{left:100%;transform:rotateY(var(--td,0deg))}
+.curl.prev .strip .strip{right:100%;transform:rotateY(calc(-1 * var(--td,0deg)))}
+.face{
+  position:absolute;top:0;bottom:0;left:0;right:-1.1px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background-repeat:no-repeat;background-size:var(--bw,0px) auto;
+}
+.face.back{transform:rotateY(180deg)}
+.face .sh,.face .gl{
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 5.2%,#000 94.8%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 5.2%,#000 94.8%,transparent 100%);
+}
+
+/* Loupe Magnifier */
+.loupe{
+  position:absolute;left:0;top:0;
+  width:var(--lr,260px);height:var(--lr,260px);
+  pointer-events:none;z-index:80;opacity:0;
+  transition:opacity .25s ease;will-change:transform;
+}
+.loupe.on{opacity:1}
+.loupe.held .ring{cursor:grabbing}
+.loupe .ring{
+  position:absolute;inset:0;border-radius:50%;
+  pointer-events:auto;cursor:grab;
+  padding:calc(var(--lr,260px) * .058);
+  box-shadow:0 10px 22px rgba(58,44,26,.26);
+}
+.loupe .ring:before{
+  content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:linear-gradient(146deg,#fdf7e9 0%,#e6d7b4 14%,#b69d70 32%,#7d6740 50%,#cdbb92 66%,#f4ead3 80%,#9b8459 100%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.8),inset 0 -2px 3px rgba(70,52,26,.5);
+  -webkit-mask-image:radial-gradient(circle closest-side at 50% 50%,transparent 0 88.2%,#000 89.8% 100%);
+  mask-image:radial-gradient(circle closest-side at 50% 50%,transparent 0 88.2%,#000 89.8% 100%);
+}
+.loupe .grip{
+  position:absolute;left:50%;top:50%;
+  width:calc(var(--lr,260px) * .74);height:calc(var(--lr,260px) * .125);
+  transform-origin:0 50%;
+  transform:rotate(40deg) translate(calc(var(--lr,260px) * .33),-50%);
+  border-radius:calc(var(--lr,260px) * .06);
+  pointer-events:auto;cursor:grab;
+  background:linear-gradient(180deg,rgba(255,255,255,.46) 0 13%,rgba(255,255,255,0) 44%,rgba(0,0,0,.26) 100%),linear-gradient(90deg,#d9bd82 0 14%,#a9884e 14% 20%,#6d4c2b 20% 62%,#5a3d22 62% 92%,#7a563180 92% 100%);
+  box-shadow:0 8px 15px rgba(58,44,26,.26);
+}
+.lens{
+  position:relative;display:block;width:100%;height:100%;border-radius:50%;
+  background-repeat:no-repeat;overflow:hidden;
+}
+
+/* ---------------- CAPTION & CONTROLS BELOW BOOK ---------------- */
+.sb-captions{display:grid;justify-items:center}
+.sb-captions>*{grid-area:1/1;margin:0}
+
+/* Chapter Heading Title below book */
+.sb-caption{
+  font-family:var(--display);
+  font-size:clamp(24px,2.8vw,36px);
+  font-weight:400;
+  letter-spacing:0.02em;
+  color:var(--forest);
+  text-align:center;
+  animation:sb-cap-in .5s ease both;
+}
+.sb-caption.live{animation:none}
+
+.sb-tools{
+  display:flex;align-items:center;gap:6px;
+  border:1.5px solid var(--gold);border-radius:999px;
+  padding:5px 10px;background:rgba(247,240,223,0.95);
+  box-shadow:0 6px 18px var(--gold-glow);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.tool{
+  width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;
+  border:0;border-radius:50%;background:transparent;color:var(--teal);
+  cursor:pointer;transition:all .18s ease;
+}
+.tool:hover{background:var(--teal);color:#fff}
+.tool[aria-pressed="true"]{background:var(--teal);color:var(--gold)}
+
+.sb-hint{
+  margin:0;
+  font-family:var(--font-ui);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+.sb-zone{position:absolute;top:0;bottom:0;border:0;background:transparent;cursor:grab;z-index:60}
+.sb-prev{left:0;width:50%}
+.sb-next{right:0;width:50%}
+
+/* ---------------- DIVIDER RULES & SECTIONS ---------------- */
+.rule{
+  display:block;width:min(960px,84vw);margin:clamp(28px,5vh,52px) auto;
+  height:clamp(24px,3.5vw,40px);
+  background:url(meng-to-sketchbook/divider.png) center / 100% auto no-repeat;
+  opacity:.5;
+}
+.rule.short{width:min(380px,48vw);opacity:.4}
+
+.section-label{
+  font-family:var(--display);
+  font-size:18px;
+  font-weight:400;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin:0 0 16px;
+}
+
+.about{
+  position:relative;max-width:980px;margin:0 auto;
+  padding:36px clamp(20px,4vw,44px);
+  background:rgba(247,240,223,0.88);
+  border:1.5px solid var(--gold);
+  border-radius:12px;
+  box-shadow:0 12px 32px var(--gold-glow);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,4vw,50px);align-items:start;
+}
+
+.bio{
+  font-family:var(--font-body);
+  font-size:clamp(17px,1.7vw,20px);
+  line-height:1.8;
+  color:var(--ink);
+  margin:0;
+  font-weight:400;
+}
+.bio strong{color:var(--teal);font-family:var(--display);font-weight:400}
+.bio em{color:var(--vermilion);font-style:italic}
+.bloom{width:clamp(130px,15vw,220px);opacity:.9;align-self:center}
+
+@media (max-width:760px){
+  .about{grid-template-columns:1fr;padding:24px 20px}
+  .bloom{width:150px;justify-self:center}
+}
+
+/* ---------------- PLATES INDEX LIST ---------------- */
+.plates{max-width:980px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+.plate-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--gold)}
+.plate{
+  display:grid;grid-template-columns:2.8em minmax(0,1fr) auto;gap:14px;align-items:baseline;
+  width:100%;padding:14px 8px;border:0;border-bottom:1px solid var(--hairline);
+  background:transparent;text-align:left;cursor:pointer;color:inherit;
+  transition:all .22s ease;
+}
+.plate:hover,.plate[aria-current="true"]{
+  background:linear-gradient(90deg, rgba(247,240,223,0.98), rgba(241,231,209,0.85));
+  border-left:4px solid var(--teal);
+  padding-left:18px;
+}
+.plate .n{
+  font-family:var(--font-ui);
+  font-size:13px;
+  font-weight:700;
+  color:var(--teal);
+  letter-spacing:var(--track-nav);
+}
+.plate .t{
+  font-family:var(--display);
+  font-size:clamp(19px,2.1vw,26px);
+  font-weight:400;
+  color:var(--forest);
+}
+.plate .p{
+  font-family:var(--font-ui);
+  font-size:13px;
+  font-weight:500;
+  color:var(--ink-soft);
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  text-align:right;
+}
+.plate[aria-current="true"] .p{color:var(--vermilion);font-weight:600}
+
+/* ---------------- FINAL TRIBUTE SECTION ---------------- */
+.final-tribute{
+  max-width:840px;margin:50px auto 40px;padding:48px 24px 60px;
+  background:linear-gradient(180deg, rgba(247,240,223,0.95), rgba(241,231,209,0.98));
+  border:2.5px solid var(--gold);
+  border-radius:14px;
+  box-shadow:0 20px 50px var(--gold-glow);
+  text-align:center;position:relative;
+}
+.tribute-content{display:flex;flex-direction:column;align-items:center;gap:20px}
+
+.tribute-photo-frame{
+  background:#fff;padding:12px 12px 20px;border-radius:3px;
+  border:4px solid var(--gold);
+  box-shadow:0 0 0 2px var(--teal), 0 16px 40px rgba(43,39,33,0.25);
+  transform:rotate(-1deg);margin-bottom:20px;max-width:480px;width:100%;
+}
+.tribute-photo{width:100%;max-height:70vh;object-fit:contain;display:block;border-radius:1px}
+
+.tribute-kicker{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:clamp(20px,2.2vw,26px);
+  color:var(--teal);margin:0;
+}
+.tribute-parents{
+  font-family:var(--display);font-size:clamp(38px,4.5vw,56px);font-weight:400;
+  color:var(--forest);letter-spacing:.05em;margin:0;
+}
+.tribute-love{
+  font-family:var(--display);font-size:clamp(22px,2.8vw,36px);font-weight:400;
+  color:var(--vermilion);letter-spacing:.06em;margin:0;
+}
+.tribute-divider{width:70px;height:1px;background:var(--hairline);margin:12px 0}
+.tribute-brand{
+  font-family:'Bremlin', serif;font-size:clamp(26px,3vw,36px);font-weight:normal;
+  color:var(--teal);letter-spacing:.18em;margin:0;text-transform:uppercase;
+}
+.tribute-tagline{
+  font-family:var(--font-ui);
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+@media (max-width:640px){
+  .top{padding-block:10px 32px;gap:6px}
+  .top .name{font-size:22px}
+  .top nav{gap:12px;font-size:13.5px}
+  .hero-kicker{font-size:11.5px;padding:5px 16px}
+  .sb-3d{max-width:100%}
+  .plate{grid-template-columns:1fr;gap:4px}
+  .plate .p{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<canvas id="stardust-canvas" style="position:fixed;inset:0;z-index:-1;pointer-events:none;"></canvas>
+
+<div class="wash" aria-hidden="true"></div>
+<main class="page home">
+
+  <header class="top">
+    <a class="name" href="#">ANANTA</a>
+    <nav>
+      <a href="#plates">Journal</a>
+      <a href="#about">Family Story</a>
+      <a href="#contact">Tribute</a>
+      
+    </nav>
+  </header>
+
+  <section id="sketchbook" class="hero">
+    <img class="botany l" src="meng-to-sketchbook/botany-left.png" alt="" aria-hidden="true">
+    <img class="botany r" src="meng-to-sketchbook/botany-right.png" alt="" aria-hidden="true">
+
+    <p class="hero-kicker">ANANTA · Endless Love. Eternal Bond. · Amma · Nanna · Ajay · Vijay</p>
+
+    <div class="sb-wrap" id="sbWrap">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="sb-mblur-1"><feGaussianBlur stdDeviation="5 0"/></filter>
+        <filter id="sb-mblur-2"><feGaussianBlur stdDeviation="14 0"/></filter>
+      </svg>
+      <div class="sb-stage" id="sbStage">
+        <button class="sb-arrow left" id="sbLeft" aria-label="previous page">
+          <svg viewBox="0 0 14 44" width="14" height="44" fill="none" aria-hidden="true"><polyline points="11,3 3,22 11,41" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="sb-3d" id="sb3d">
+          <div class="sb-tilt" id="sbTilt">
+            <div class="sb-cast ambient" aria-hidden="true"></div>
+            <div class="sb-cast contact" aria-hidden="true"></div>
+            <div class="sb-cast hair" aria-hidden="true"></div>
+            <div class="sb-book" id="sbBook"></div>
+          </div>
+          <div class="zoomwrap" id="zoomWrap" aria-hidden="true"><div class="zoominner" id="zoomInner"></div></div>
+          <div class="loupe" id="loupe"><span class="grip"></span><span class="ring"><span class="lens" id="loupeLens"><span class="mag" id="loupeMag"></span></span></span></div>
+        </div>
+        <button class="sb-arrow right" id="sbRight" aria-label="next page">
+          <svg viewBox="0 0 14 44" width="14" height="44" fill="none" aria-hidden="true"><polyline points="3,3 11,22 3,41" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="sb-captions" id="sbCaptions"></div>
+      <div class="sb-tools" role="group" aria-label="view controls">
+        <button class="tool" id="zOut" aria-label="zoom out"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8.6" cy="8.6" r="5.6"/><path d="M12.8 12.8 17.4 17.4M6.2 8.6h4.8"/></svg></button>
+        <span class="zoom-read" id="zRead">100%</span>
+        <button class="tool" id="zIn" aria-label="zoom in"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8.6" cy="8.6" r="5.6"/><path d="M12.8 12.8 17.4 17.4M6.2 8.6h4.8M8.6 6.2v4.8"/></svg></button>
+        <span class="tool-sep" aria-hidden="true"></span>
+        <button class="tool" id="loupeBtn" aria-label="magnifier" aria-pressed="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8.8" cy="8.8" r="5.8"/><path d="M13 13l4.4 4.4"/><path d="M6.4 7.2a3.2 3.2 0 0 1 2.4-1.4" opacity=".55"/></svg></button>
+      </div>
+      <p class="sb-hint" id="sbHint">Drag the page to turn · Drag the glass across it</p>
+    </div>
+
+    <button class="hero-down" id="heroDown" aria-label="scroll to about">
+      <svg viewBox="0 0 44 22" width="34" height="17" fill="none" aria-hidden="true">
+        <polyline points="3,3 22,11 41,3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="3,11 22,19 41,11" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </section>
+
+  <div class="rule" aria-hidden="true"></div>
+
+  <section id="about" class="about">
+    <div>
+      <p class="section-label">Family Story</p>
+      <p class="bio">
+        <strong>ANANTA</strong> is a personal tribute to our parents—<strong>Nanna (Echarla Balaji, 50)</strong> and <strong>Amma (Echarla Lakshmi)</strong>—and the eternal bond they built for our family. Nanna’s journey as a Poojari at Sri Vasavi Temple in Amaravati began in the 1990s, performing sacred poojas, temple rituals, and traditional Vinayaka Chavithi mandap ceremonies with patience, generosity, and protection. From humble circumstances, Nanna built our family home and rode his Access 125 scooter every day with quiet strength.<br><br>
+        Amma, holding a Degree in Commerce, worked from childhood through limited resources—including her early work at a bonda stall—with dignity, grace, and unyielding sacrifice. An exceptional cook, her legendary culinary art is celebrated in our future family dream, <em>Amma Cheti Vanta</em>. Their journey began on the temple stairs where Amma sat, leading to an arranged marriage built on love and mutual support. Raised with childhood memories of bicycle rides, secret toys, and hiding behind Nanna during tuition scoldings, brothers <strong>Ajay (born 2003)</strong> and <strong>Vijay (born 2005)</strong> carry their eternal legacy forward.
+      </p>
+    </div>
+    <img class="bloom" src="meng-to-sketchbook/bloom.png" alt="" aria-hidden="true">
+  </section>
+
+  <div class="rule short" aria-hidden="true"></div>
+
+  <section id="plates" class="plates">
+    <p class="section-label">Plates</p>
+    <ol class="plate-list" id="plateList"></ol>
+  </section>
+
+  <div class="rule short" aria-hidden="true"></div>
+  <section id="contact" class="final-tribute">
+    <div class="tribute-content">
+      <div class="tribute-photo-frame">
+        <img class="tribute-photo" src="meng-to-sketchbook/photos/family-matching-orange.jpg" alt="Amma and Nanna Family Portrait">
+      </div>
+      
+      <p class="tribute-kicker">For everything you gave me…</p>
+      <h2 class="tribute-parents">AMMA & NANNA</h2>
+      <p class="tribute-love">I LOVE YOU FOREVER. ♾️</p>
+
+      <div class="tribute-divider" aria-hidden="true"></div>
+
+      <h3 class="tribute-brand">ANANTA</h3>
+      <p class="tribute-tagline">Endless Love. Eternal Bond.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+/* =====================================================================
+   Meng To — sketchbook hero.
+   Spreads are transparent PNGs of an open sketchbook generated with
+   Higgsfield.  The leaf that turns is a real curved surface: a chain of
+   nested strips whose tangent sweeps through an arc, so the page bends
+   the way paper bends instead of pivoting like a flat door.
+   ===================================================================== */
+const Q=new URLSearchParams(location.search);
+const DIR='meng-to-sketchbook/';
+const PAGES=[
+  {file:'plate-1.png', title:'WHERE MY STORY BEGAN', place:'Amaravati & Family Roots'},
+  {file:'plate-2.png', title:'NANNA — A LIFE OF DEVOTION', place:'Sri Vasavi Temple, Amaravati'},
+  {file:'plate-3.png', title:'AMMA — THE HEART OF OUR HOME', place:'Family Hearth & Grace'},
+  {file:'plate-4.png', title:'TWO HEARTS. ONE FAMILY.', place:'Temple Stairs & Sacred Union'},
+  {file:'plate-5.png', title:'THE CHILDREN THEY RAISED', place:'Brothers — Ajay & Vijay'},
+  {file:'plate-6.png', title:'MEMORIES THAT FEEL LIKE MOVIES', place:'Childhood Nostalgia'},
+  {file:'plate-7.png', title:'A FAMILY ROOTED IN TRADITION', place:'Vinayaka Chavithi Mandaps'},
+  {file:'plate-8.png', title:'OUR FAMILY TODAY', place:'Together in Gratitude'},
+  {file:'plate-9.png', title:'THE DREAM', place:'Amma Cheti Vanta & Our Future'}
+];
+PAGES.forEach(p=>p.url=DIR+p.file);
+const M=PAGES.length, LAND=6;
+
+const wrap=document.getElementById('sbWrap');
+const stage=document.getElementById('sbStage');
+const sb3d=document.getElementById('sb3d');
+const book=document.getElementById('sbBook');
+const capBox=document.getElementById('sbCaptions');
+const hint=document.getElementById('sbHint');
+const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ------------------------------------------------ the turning leaf */
+const N=18;            /* strips — enough for a smooth curve          */
+const SPAN=0.449;      /* gutter → outer page edge, as a fraction     */
+const BETA=0.60;       /* peak curl of the arc, radians              */
+let idx=0, turn=null;  /* turn = {dir, from, to, t}                   */
+let strips=[];         /* the chain, kept for per-frame lighting       */
+
+function el(t,c){const e=document.createElement(t);if(c)e.className=c;return e}
+function imgEl(i,side){
+  const im=new Image();im.className='sb-half-img '+side;
+  im.draggable=false;im.alt='';im.src=PAGES[i].url;return im;
+}
+
+function halfEl(pos,i){
+  const d=el('div','sb-half '+pos);
+  d.appendChild(imgEl(i,pos));
+  d.appendChild(el('div','gutter-shade '+pos));
+  return d;
+}
+/* build the strip chain once per turn; background offsets are pure
+   geometry, so they never need touching again while it animates */
+function buildCurl(dir,from,to){
+  strips=[];
+  const c=el('div','curl '+dir);
+  c.style.setProperty('--n',N);
+  c.style.setProperty('--span',SPAN);
+  let host=c;
+  for(let i=0;i<N;i++){
+    const s=el('div','strip');
+    s.style.setProperty('--i',i);
+    const gut='calc(var(--bw) * 0.5)';
+    const sw='calc(var(--bw) * '+SPAN+' / '+N+')';
+    const A='calc(-1 * ('+gut+' + '+i+' * '+sw+'))';         /* faces the from-page  */
+    const B='calc('+(i+1)+' * '+sw+' - '+gut+')';            /* faces the to-page    */
+    const f=el('div','face front'), b=el('div','face back');
+    const dress=(e,url,px)=>{
+      e.style.backgroundImage='url('+url+')';
+      e.style.backgroundPositionX=px;
+    };
+    dress(f,PAGES[from].url, dir==='next'?A:B);
+    dress(b,PAGES[to].url,   dir==='next'?B:A);
+    f.appendChild(el('div','sh'));f.appendChild(el('div','gl'));
+    b.appendChild(el('div','sh'));b.appendChild(el('div','gl'));
+    s.appendChild(f);s.appendChild(b);
+    if(i===N-1)s.classList.add('edge');
+    host.appendChild(s);host=s;
+    strips.push(s);
+  }
+  return c;
+}
+function applyTurn(t){
+  const th=Math.PI*t;                       /* how far the leaf has swung */
+  const beta=BETA*Math.sin(Math.PI*t);      /* it is flat at both ends    */
+  const D=180/Math.PI;
+  const tt=th+beta, td=2*beta/N;
+  sb3d.style.setProperty('--tt',(tt*D).toFixed(2)+'deg');
+  sb3d.style.setProperty('--td',(td*D).toFixed(3)+'deg');
+  sb3d.style.setProperty('--shade',Math.sin(Math.PI*t).toFixed(3));
+  fadeCaption(t);
+  for(let i=0;i<strips.length;i++){
+    const l1=Math.abs(Math.cos(tt-i*td));        /* facing at this strip's near edge */
+    const l2=Math.abs(Math.cos(tt-(i+1)*td));    /* ...and at its far edge           */
+    const st=strips[i].style;
+    st.setProperty('--lit',l1.toFixed(3));
+    st.setProperty('--a1',((1-l1)*.62).toFixed(3));
+    st.setProperty('--a2',((1-l2)*.62).toFixed(3));
+  }
+}
+function paint(){
+  book.textContent='';
+  if(!turn){
+    const f=el('div','sb-full');
+    const im=new Image();im.src=PAGES[idx].url;im.alt=PAGES[idx].title;
+    im.draggable=false;
+    f.appendChild(im);book.appendChild(f);
+    sb3d.style.setProperty('--shade','0');
+  }else{
+    const next=turn.dir==='next';
+    book.appendChild(halfEl('left', next?turn.from:turn.to));
+    book.appendChild(halfEl('right',next?turn.to:turn.from));
+    book.appendChild(buildCurl(turn.dir,turn.from,turn.to));
+    applyTurn(turn.t);
+  }
+  const a=el('button','sb-zone sb-prev'),b=el('button','sb-zone sb-next');
+  a.setAttribute('aria-label','previous page');b.setAttribute('aria-label','next page');
+  a.onclick = (e) => { if(e && e.stopPropagation) e.stopPropagation(); step('prev'); };
+  b.onclick = (e) => { if(e && e.stopPropagation) e.stopPropagation(); step('next'); };
+  a.onclick = (e) => { if(e) e.stopPropagation(); step('prev'); };
+  b.onclick = (e) => { if(e) e.stopPropagation(); step('next'); };
+  book.appendChild(a);book.appendChild(b);
+  layout();
+  caption();
+  marks();
+  if(typeof syncZoomLayer==='function')syncZoomLayer();
+  if(typeof placeLoupe==='function')placeLoupe();
+}
+function caption(){
+  capBox.textContent='';
+  capOut=capIn=null;
+  if(turn){
+    capOut=el('p','sb-caption live');capOut.textContent=PAGES[turn.from].title;capBox.appendChild(capOut);
+    capIn=el('p','sb-caption live');capIn.textContent=PAGES[turn.to].title;capBox.appendChild(capIn);
+    fadeCaption(turn.t);
+  }else{
+    const p=el('p','sb-caption');p.textContent=PAGES[idx].title;capBox.appendChild(p);
+  }
+}
+let capOut=null,capIn=null;
+function fadeCaption(t){
+  if(!capOut||!capIn)return;
+  /* the old title is gone before the new one arrives, so they never
+     sit on top of each other mid-drag */
+  const out=1-Math.max(0,Math.min(1,(t-0.10)/0.28));
+  const inn=Math.max(0,Math.min(1,(t-0.56)/0.30));
+  capOut.style.opacity=out.toFixed(3);
+  capIn.style.opacity=inn.toFixed(3);
+}
+function layout(){
+  sb3d.style.setProperty('--bw',book.clientWidth+'px');
+}
+addEventListener('resize',layout);
+
+/* ------------------------------------------------------ spring loop */
+let spring=null;
+function animateTo(target,onDone,stiff,damp){
+  spring={kind:'spring',v:0,target:target,done:onDone,k:stiff||150,c:damp||22};
+  kick();
+}
+/* the riffle wants a fixed tempo, not a spring settling time */
+function tweenTo(target,dur,onDone){
+  spring={kind:'tween',from:turn?turn.t:0,target:target,dur:dur,e:0,done:onDone};
+  kick();
+}
+let raf=null,last=0;
+function tick(now){
+  raf=null;
+  const dt=Math.min(0.032,(now-last)/1000||0.016);last=now;
+  if(spring&&turn){
+    const s=spring;
+    if(s.kind==='tween'){
+      s.e+=dt;
+      const k=Math.min(1,s.e/s.dur);
+      turn.t=s.from+(s.target-s.from)*k;
+      applyTurn(turn.t);
+      if(k>=1){spring=null;const d=s.done;d&&d();}
+    }else{
+      const x=turn.t-s.target;
+      s.v+= (-s.k*x - s.c*s.v)*dt;
+      turn.t+=s.v*dt;
+      if(Math.abs(turn.t-s.target)<0.002&&Math.abs(s.v)<0.02){
+        turn.t=s.target;spring=null;
+        applyTurn(turn.t);
+        const d=s.done;d&&d();
+      }else applyTurn(turn.t);
+    }
+  }
+  viewSpring();
+  const lmoved=loupeEase();
+  /* kick() may already have queued the next frame from a done-callback */
+  if((spring||viewActive||lmoved)&&raf===null) raf=requestAnimationFrame(tick);
+}
+function kick(){ if(raf===null){last=performance.now();raf=requestAnimationFrame(tick);} }
+
+/* ------------------------------------------- tilt + zoom of the book */
+const TILT_X=4.5, TILT_Y=7;      /* degrees — deliberately restrained   */
+const ZOOM_MIN=0.9, ZOOM_MAX=1.5;
+const view={rx:0,ry:0,z:1, trx:0,try_:0,tz:1};
+let viewActive=false;
+let lastZ=1;
+function applyView(){
+  sb3d.style.setProperty('--rx',view.rx.toFixed(2)+'deg');
+  sb3d.style.setProperty('--ry',view.ry.toFixed(2)+'deg');
+  sb3d.style.setProperty('--zoom',view.z.toFixed(3));
+  /* the glass stays put, but the page under it has moved */
+  if(view.z!==lastZ){lastZ=view.z;if(typeof placeLoupe==='function')placeLoupe();}
+}
+function viewSpring(){
+  const e=0.14;
+  let moved=false;
+  for(const [k,t] of [['rx','trx'],['ry','try_'],['z','tz']]){
+    const d=view[t]-view[k];
+    if(Math.abs(d)>0.0006){view[k]+=d*e;moved=true;}
+    else view[k]=view[t];
+  }
+  if(moved)applyView();
+  viewActive=moved;
+  return moved;
+}
+function setView(rx,ry,z){
+  view.trx=Math.max(-TILT_X,Math.min(TILT_X,rx));
+  view.try_=Math.max(-TILT_Y,Math.min(TILT_Y,ry));
+  view.tz=Math.max(ZOOM_MIN,Math.min(ZOOM_MAX,z));
+  viewActive=true;kick();
+  if(typeof syncZoom==='function')syncZoom();
+}
+/* the book leans toward the cursor — no dragging, and never far */
+function tiltTo(cx,cy){
+  if(drag)return;                       /* hold still while a page is being turned */
+  const r=book.getBoundingClientRect();
+  if(!r.width)return;
+  const nx=Math.max(-1,Math.min(1,(cx-(r.left+r.width/2))/(r.width*0.62)));
+  const ny=Math.max(-1,Math.min(1,(cy-(r.top+r.height/2))/(r.height*0.9)));
+  setView(-ny*TILT_X, nx*TILT_Y, view.tz);
+}
+addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch')return;
+  tiltTo(e.clientX,e.clientY);
+},{passive:true});
+addEventListener('pointerout',e=>{if(!e.relatedTarget)setView(0,0,view.tz)});
+addEventListener('blur',()=>setView(0,0,view.tz));
+/* the wheel belongs to the page — zoom is on the toolbar, or a double click
+   to come back to 100% */
+stage.addEventListener('dblclick',()=>setView(view.trx,view.try_,1));
+
+/* ------------------------------------------------------- pointer work */
+let drag=null;
+function bookRect(){return book.getBoundingClientRect()}
+function hideHint(){hint.classList.add('gone')}
+
+stage.addEventListener('pointerdown',e=>{
+  if(e.button!==0)return;
+  e.preventDefault();                     /* no text selection, no image drag */
+  const onBook=e.target.closest('.sb-zone');
+  stage.setPointerCapture(e.pointerId);
+  hideHint();
+  if(introOn) endIntro();
+  if(!onBook)return;
+  const r=bookRect();
+  const dir=(e.clientX-r.left)/r.width>0.5?'next':'prev';
+  startTurn(dir,0);
+  drag={dir:dir,x0:e.clientX,w:r.width,moved:0,vel:0,tPrev:performance.now()};
+});
+stage.addEventListener('pointermove',e=>{
+  if(!drag)return;
+  const dx=e.clientX-drag.x0;
+  drag.moved=Math.max(drag.moved,Math.abs(dx));
+  const raw=(drag.dir==='next'? -dx : dx)/(drag.w*0.62);
+  const t=Math.max(0,Math.min(1,raw));
+  const now=performance.now();
+  drag.vel=(t-(turn?turn.t:0))/Math.max(0.001,(now-drag.tPrev)/1000);
+  drag.tPrev=now;
+  if(turn){turn.t=t;applyTurn(t);}
+});
+function endDrag(e){
+  if(!drag)return;
+  const d=drag;drag=null;
+  if(!turn)return;
+  if(d.moved<6){                              /* a tap, not a drag */
+    commit();return;
+  }
+  const go = turn.t>0.42 || d.vel>1.1;
+  if(go)commit(); else cancel();
+}
+stage.addEventListener('dragstart',e=>e.preventDefault());
+stage.addEventListener('selectstart',e=>e.preventDefault());
+stage.addEventListener('pointerup',endDrag);
+stage.addEventListener('pointercancel',endDrag);
+
+/* ------------------------------------------------------ turn control */
+function startTurn(dir,t){
+  spring=null;
+  if(turn){idx=turn.to;turn=null;}      /* settle anything still in flight */
+  if(typeof shoveLoupe==='function')shoveLoupe(dir);
+  const from=idx;
+  turn={dir:dir,from:from,to:dir==='next'?(from+1)%M:(from-1+M)%M,t:t||0};
+  paint();
+}
+function commit(){
+  if(!turn)return;
+  if(REDUCED){idx=turn.to;turn=null;paint();return;}
+  animateTo(1,()=>{idx=turn.to;turn=null;paint();},170,26);
+  kick();
+}
+function cancel(){
+  if(!turn)return;
+  animateTo(0,()=>{turn=null;paint();},150,24);
+  kick();
+}
+function step(dir){
+  if(introOn)endIntro();
+  if(turn){ /* finish whatever is in flight first */ idx=turn.to;turn=null; }
+  startTurn(dir,0);commit();
+}
+function goTo(i){
+  if(introOn)endIntro();
+  if(i===idx)return;
+  if(turn){idx=turn.to;turn=null;}
+  const fwd=(i-idx+M)%M, back=(idx-i+M)%M;
+  if(Math.min(fwd,back)===1){step(fwd===1?'next':'prev');return;}
+  idx=i;paint();
+}
+const sbL = document.getElementById('sbLeft');
+const sbR = document.getElementById('sbRight');
+if(sbL) sbL.onclick = (e) => { if(e) e.stopPropagation(); step('prev'); };
+if(sbR) sbR.onclick = (e) => { if(e) e.stopPropagation(); step('next'); };
+addEventListener('keydown',e=>{
+  if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  const t=e.target;
+  if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;
+  e.preventDefault();hideHint();
+  step(e.key==='ArrowRight'?'next':'prev');
+});
+document.getElementById('heroDown').onclick=()=>{
+  document.getElementById('about').scrollIntoView({behavior:'smooth',block:'start'});
+};
+
+/* --------------------------------------------------- loupe + controls */
+const loupe=document.getElementById('loupe');
+const lens=document.getElementById('loupeLens');
+const mag=document.getElementById('loupeMag');
+const zRead=document.getElementById('zRead');
+const loupeBtn=document.getElementById('loupeBtn');
+const zInBtn=document.getElementById('zIn'), zOutBtn=document.getElementById('zOut');
+const MAG=2.3;
+const DESK=getComputedStyle(document.documentElement).getPropertyValue('--paper').trim()||'#ece7dc';
+let loupeOn=true, lx=null, ly=null, lgrab=null, lTarget=null;
+
+function loupeSize(){return Math.round(Math.max(165,Math.min(262,book.clientWidth*0.235)));}
+/* the loupe's own coordinate space: stage pixels in live mode (it sits
+   outside the book's transform), book pixels otherwise */
+function bookBox(){
+  return {x:0,y:0,w:book.clientWidth,h:book.clientHeight};
+}
+/* park it on the desk at the lower right, half off the book */
+function restLoupe(){
+  const b=bookBox();
+  lx=b.x+b.w*0.88; ly=b.y+b.h*0.855;
+  placeLoupe();
+}
+/* The glass sits above the tilt, in the book's untransformed pixels, so the
+   lean of the page never nudges it.  What the tilt does change is which part
+   of the paper is under the glass, and only the scale matters enough to
+   correct for: the book is drawn about its own centre. */
+const zoomWrap=document.getElementById('zoomWrap');
+const zoomInner=document.getElementById('zoomInner');
+/* mirror whatever the book is currently showing into the magnified copy */
+function syncZoomLayer(){
+  zoomInner.textContent='';
+  for(const c of book.children){
+    if(c.classList.contains('sb-zone'))continue;      /* hit targets need no copy */
+    zoomInner.appendChild(c.cloneNode(true));
+  }
+}
+function placeLoupe(){
+  if(lx===null)return;
+  const B=bookBox(), bw=B.w, bh=B.h;
+  if(!bw)return;
+  const R=loupeSize()/2, bez=R*2*0.058;
+  loupe.style.setProperty('--lr',R*2+'px');
+  loupe.style.transform='translate3d('+(lx-R).toFixed(1)+'px,'+(ly-R).toFixed(1)+'px,0)';
+  if(loupeOn)loupe.classList.add('on');
+
+  /* where the paper's edges actually land once the book is scaled */
+  const z=view.z, cx=bw/2, cy=bh/2;
+  const x0=cx+(bw*.051-cx)*z, x1=cx+(bw*.949-cx)*z;
+  const y0=cy+(bh*.218-cy)*z, y1=cy+(bh*.782-cy)*z;
+  /* How far the glass's own centre is inside the paper.  The copy fades out
+     as it wanders off the sheet, so you are left looking through plain
+     glass rather than at a sliver of page on flat desk. */
+  const nx=Math.max(x0,Math.min(lx,x1));
+  const ny=Math.max(y0,Math.min(ly,y1));
+  const inside=(lx>x0&&lx<x1&&ly>y0&&ly<y1)
+    ? Math.min(lx-x0, x1-lx, ly-y0, y1-ly)
+    : -Math.hypot(lx-nx,ly-ny);
+  const k=Math.max(0,Math.min(1,(inside+R*0.30)/(R*0.55)));
+
+  zoomWrap.style.opacity=(loupeOn?k:0).toFixed(3);
+  if(k<=0.002)return;
+  const r=(R-bez).toFixed(1);
+  const mask='radial-gradient(circle '+r+'px at '+lx.toFixed(1)+'px '+ly.toFixed(1)+'px,'
+    +'#000 calc(100% - 1px),transparent 100%)';
+  zoomWrap.style.webkitMaskImage=mask;
+  zoomWrap.style.maskImage=mask;
+  /* the page point beneath the glass, magnified about that same spot so the
+     lens keeps showing MAG times whatever is on screen */
+  const px=cx+(lx-cx)/z, py=cy+(ly-cy)/z, s=MAG*z;
+  zoomInner.style.transform='translate('+(lx-px*s).toFixed(1)+'px,'+(ly-py*s).toFixed(1)+'px) '
+    +'scale('+s.toFixed(4)+')';
+}
+/* the leaf shoves the glass aside as it sweeps past */
+function shoveLoupe(dir){
+  if(!loupeOn||lx===null||lgrab)return;
+  const b=bookBox();
+  /* which page point the glass covers, once the book's scale is undone */
+  const nx=(b.w/2+(lx-b.x-b.w/2)/view.z)/b.w, ny=(b.h/2+(ly-b.y-b.h/2)/view.z)/b.h;
+  if(nx<0.02||nx>0.98||ny<0.17||ny>0.83)return;      /* already clear of the page */
+  lTarget={x:b.x+b.w*(dir==='next'?0.12:0.88), y:b.y+b.h*0.855};
+  kick();
+}
+function loupeEase(){
+  if(!lTarget)return false;
+  if(lgrab){lTarget=null;return false;}
+  const dx=lTarget.x-lx, dy=lTarget.y-ly;
+  if(Math.abs(dx)<0.5&&Math.abs(dy)<0.5){lx=lTarget.x;ly=lTarget.y;lTarget=null;placeLoupe();return false;}
+  lx+=dx*0.17;ly+=dy*0.17;placeLoupe();
+  return true;
+}
+loupe.addEventListener('pointerdown',e=>{
+  if(!loupeOn||e.button!==0)return;
+  e.preventDefault();e.stopPropagation();     /* never starts a page turn */
+  lTarget=null;
+  lgrab={cx:e.clientX,cy:e.clientY,lx0:lx,ly0:ly};
+  loupe.classList.add('held');
+  loupe.setPointerCapture(e.pointerId);
+  hideHint();
+});
+loupe.addEventListener('pointermove',e=>{
+  if(!lgrab)return;
+  const b=bookBox(), R=loupeSize()/2;
+  /* the glass carries none of the book's transform, so the cursor maps 1:1 */
+  lx=Math.max(b.x-R*0.7,Math.min(b.x+b.w+R*0.7, lgrab.lx0+(e.clientX-lgrab.cx)));
+  ly=Math.max(b.y-R*0.7,Math.min(b.y+b.h+R*1.0, lgrab.ly0+(e.clientY-lgrab.cy)));
+  placeLoupe();
+});
+function dropLoupe(){lgrab=null;loupe.classList.remove('held');}
+loupe.addEventListener('pointerup',dropLoupe);
+loupe.addEventListener('pointercancel',dropLoupe);
+loupeBtn.onclick=()=>{
+  loupeOn=!loupeOn;
+  loupeBtn.setAttribute('aria-pressed',String(loupeOn));
+  loupe.classList.toggle('on',loupeOn);
+  if(loupeOn&&lx===null)restLoupe();
+};
+addEventListener('resize',()=>{lx=null;restLoupe();});
+
+function syncZoom(){
+  zRead.textContent=Math.round(view.tz*100)+'%';
+  zOutBtn.disabled=view.tz<=ZOOM_MIN+0.001;
+  zInBtn.disabled=view.tz>=ZOOM_MAX-0.001;
+}
+zInBtn.onclick=()=>{setView(view.trx,view.try_,view.tz*1.16);hideHint();};
+zOutBtn.onclick=()=>{setView(view.trx,view.try_,view.tz/1.16);hideHint();};
+
+/* --------------------------------------------------------- the index */
+const plateList=document.getElementById('plateList');
+PAGES.forEach((p,i)=>{
+  const li=el('li');
+  const b=el('button','plate');
+  b.innerHTML='<span class="n">'+String(i+1).padStart(2,'0')+'</span>'+
+              '<span class="t"></span><span class="p"></span>';
+  b.querySelector('.t').textContent=p.title;
+  b.querySelector('.p').textContent=p.place;
+  b.onclick=()=>{goTo(i);document.getElementById('sketchbook').scrollIntoView({behavior:'smooth',block:'center'});};
+  li.appendChild(b);plateList.appendChild(li);
+});
+function marks(){
+  const cur=turn?turn.to:idx;
+  plateList.querySelectorAll('.plate').forEach((b,i)=>b.setAttribute('aria-current',i===cur?'true':'false'));
+}
+
+/* ---------------------------------------------------------- the riffle */
+let riffle=null,riffleAt=0,introOn=false;
+function endIntro(){
+  introOn=false;wrap.classList.remove('intro','b2');
+}
+function riffleStep(){
+  const s=riffle[riffleAt];
+  wrap.classList.toggle('b2',s.bell>0.55);
+  startTurn('next',0);
+  tweenTo(1,s.dur,()=>{
+    idx=turn.to;turn=null;
+    riffleAt++;
+    if(introOn&&riffleAt<riffle.length){paint();riffleStep();}
+    else{endIntro();paint();}
+  });
+}
+function startIntro(){
+  const coarse=matchMedia('(max-width: 640px), (pointer: coarse)').matches;
+  if(coarse||REDUCED||Q.has('nointro')){idx=LAND;paint();return;}
+  const steps=M+LAND;
+  riffle=[];
+  for(let r=0;r<steps;r++){
+    const bell=Math.sin(Math.PI*(r/(steps-1)));
+    riffle.push({bell:bell,dur:0.26-0.19*bell});
+  }
+  riffleAt=0;introOn=true;wrap.classList.add('intro');
+  riffleStep();
+}
+
+/* ------------------------------------------------------------- boot */
+(async function boot(){
+  idx=Q.has('shot')?(parseInt(Q.get('shot'),10)||0)%M:0;
+  paint();applyView();
+  await Promise.all(PAGES.map(p=>{
+    const im=new Image();im.src=p.url;
+    return im.decode?im.decode().catch(()=>{}):new Promise(r=>{im.onload=im.onerror=r});
+  }));
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready.catch(()=>{});
+  syncZoom();restLoupe();
+  document.body.dataset.ready='1';
+  if(Q.has('shot')){
+    if(Q.has('t')){startTurn(Q.get('dir')||'next',parseFloat(Q.get('t')));}
+    return;
+  }
+  setTimeout(startIntro,220);
+})();
+
+  // Keyboard Navigation for Page Turning & Loupe Controls
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      const nextBtn = document.getElementById('sbRight');
+      if (nextBtn && !nextBtn.disabled) nextBtn.click();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      const prevBtn = document.getElementById('sbLeft');
+      if (prevBtn && !prevBtn.disabled) prevBtn.click();
+    } else if (e.key === 'Escape') {
+      const zOut = document.getElementById('zOut');
+      if (zOut) zOut.click();
+    }
+  });
+
+</script>
+
+<!-- Ambient Relaxing Music Player -->
+
+<!-- ANANTA CINEMATIC SOUNDSCAPE CONTROL WIDGET -->
+<div id="anantaSoundWidget" style="position:fixed;bottom:24px;left:24px;z-index:9999;display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(247,240,223,0.95);border:2px solid #E8C46A;box-shadow:0 8px 24px rgba(232,196,106,0.4);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-family:'Newsreader',serif;">
+  <button id="musicPlayBtn" aria-label="Toggle Cinematic Music" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#0F4C45;color:#E8C46A;border:0;cursor:pointer;font-size:16px;transition:all 0.2s ease;">
+    <span id="musicBtnIcon">🎵</span>
+  </button>
+  <div style="display:flex;flex-direction:column;">
+    <span id="musicTrackLabel" style="font-size:12px;font-weight:600;color:#0F4C45;letter-spacing:0.04em;">Cinematic Score: OFF</span>
+    <span id="musicChapterLabel" style="font-size:11px;font-style:italic;color:#2B2721;opacity:0.75;">Click to listen</span>
+  </div>
+  <div id="volumeContainer" style="display:none;align-items:center;gap:6px;margin-left:8px;padding-left:8px;border-left:1px solid rgba(232,196,106,0.5);">
+    <span style="font-size:12px;color:#0F4C45;">🔊</span>
+    <input type="range" id="musicVolumeSlider" min="0" max="1" step="0.05" value="0.4" style="width:60px;accent-color:#0F4C45;cursor:pointer;">
+  </div>
+</div>
+
+
+<!-- Fullscreen Interactive Photo Lightbox Modal -->
+<div id="photo-lightbox" style="position:fixed;inset:0;z-index:9999;background:rgba(20,10,5,0.88);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;padding:24px;">
+  <div style="position:relative;max-width:1100px;width:100%;background:#fffef8;border:4px solid #e5a93b;border-radius:12px;padding:32px;box-shadow:0 0 0 3px #8b1e3f,0 30px 80px rgba(0,0,0,0.6);text-align:center;">
+    <button id="closeLightbox" style="position:absolute;top:16px;right:20px;background:var(--ruby);color:#fff;border:0;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;font-weight:bold;">&times;</button>
+    <img id="lightboxImg" src="" alt="Full view" style="max-height:70vh;max-width:100%;object-fit:contain;border-radius:4px;border:3px solid #e5a93b;margin-bottom:16px;">
+    <h3 id="lightboxTitle" style="font-family:'Bremlin',serif;font-size:28px;color:#8b1e3f;margin:8px 0;"></h3>
+    <p id="lightboxCaption" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#2a1208;margin:0;"></p>
+  </div>
+</div>
+
+
+<script>
+/* ── Golden Stardust Canvas Particle Engine ────────────────────────────── */
+(function(){
+  const canvas = document.getElementById('stardust-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for(let i=0; i<45; i++){
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 2.2 + 0.8,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: -Math.random() * 0.5 - 0.2,
+      alpha: Math.random() * 0.6 + 0.2,
+      pulse: Math.random() * 0.02 + 0.005
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    for(let p of particles){
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(229, 169, 59, ${p.alpha})`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = '#e5a93b';
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+      p.alpha += Math.sin(Date.now() * p.pulse) * 0.01;
+
+      if(p.y < -10){ p.y = H + 10; p.x = Math.random() * W; }
+      if(p.x < -10) p.x = W + 10;
+      if(p.x > W + 10) p.x = -10;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── Web Audio API synthesized paper rustle sound & Music ────────── */
+(function(){
+  let audioCtx = null;
+  function playRustle(){
+    try {
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const bufferSize = audioCtx.sampleRate * 0.15;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) output[i] = Math.random() * 2 - 1;
+      
+      const whiteNoise = audioCtx.createBufferSource();
+      whiteNoise.buffer = buffer;
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 1200;
+      
+      const gain = audioCtx.createGain();
+      gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+      
+      whiteNoise.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+      whiteNoise.start();
+    } catch(e){}
+  }
+
+  document.getElementById('sbLeft')?.addEventListener('click', playRustle);
+  document.getElementById('sbRight')?.addEventListener('click', playRustle);
+
+  // Background Ambient Music Generator (Web Audio Soft Chords)
+  let isPlaying = false;
+  let musicInterval = null;
+  const musicToggle = document.getElementById('musicToggle');
+  const musicText = document.getElementById('musicText');
+  const musicIcon = document.getElementById('musicIcon');
+
+  const notes = [261.63, 329.63, 392.00, 523.25, 587.33, 659.25]; // C E G C D E pentatonic
+
+  function playSoftChord(){
+    if(!isPlaying) return;
+    try {
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const freq = notes[Math.floor(Math.random() * notes.length)];
+      
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime + 1.2);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.5);
+      
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 3.6);
+    } catch(e){}
+  }
+
+  musicToggle?.addEventListener('click', () => {
+    isPlaying = !isPlaying;
+    if(isPlaying){
+      musicText.textContent = "Music Playing";
+      musicIcon.textContent = "🎶";
+      playSoftChord();
+      musicInterval = setInterval(playSoftChord, 2200);
+    } else {
+      musicText.textContent = "Play Memory Music";
+      musicIcon.textContent = "🎵";
+      clearInterval(musicInterval);
+    }
+  });
+
+  // Lightbox Handler
+  const lightbox = document.getElementById('photo-lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('closeLightbox');
+
+  document.querySelector('.tribute-photo')?.addEventListener('click', function(){
+    lightboxImg.src = this.src;
+    lightboxTitle.textContent = "AMMA & NANNA";
+    lightboxCaption.textContent = "ANANTA — Endless Love. Eternal Bond.";
+    lightbox.style.display = 'flex';
+  });
+
+  closeBtn?.addEventListener('click', () => lightbox.style.display = 'none');
+  lightbox?.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.style.display = 'none'; });
+})();
+</script>
+
+
+<script>
+/* =====================================================================
+   ANANTA — REALISTIC INDIAN KRISHNA BANSURI AUDIO ENGINE (WEB AUDIO API)
+   Primary: Handcrafted Acoustic Bamboo Bansuri Flute with Meend Glides & Breath
+   Secondary: Extremely Subtle Tanpura Drone & Occasional Distant Temple Bell
+   Zero Piano, Zero Heavy Strings, Zero Beats, Zero Orchestral Pads.
+   ===================================================================== */
+(function(){
+  let audioCtx = null;
+  let masterGain = null;
+  let isPlaying = false;
+  let currentChapterIdx = 0;
+  let soundscapeTimer = null;
+
+  const playBtn = document.getElementById('musicPlayBtn');
+  const btnIcon = document.getElementById('musicBtnIcon');
+  const trackLabel = document.getElementById('musicTrackLabel');
+  const chapterLabel = document.getElementById('musicChapterLabel');
+  const volContainer = document.getElementById('volumeContainer');
+  const volSlider = document.getElementById('musicVolumeSlider');
+
+  const CHAPTER_NAMES = [
+    "Opening: Peaceful Sunrise Bansuri",
+    "Nanna: Devotional Flute & Sacred Drone",
+    "Amma: Gentle Motherly Flute Warmth",
+    "Childhood: Nostalgic Peaceful Memories",
+    "Parents' Story: Heartfelt Bansuri Melody",
+    "Vinayaka Chavithi: Sacred Temple Atmosphere",
+    "Memories: Gentle Flute & Breath Texture",
+    "Family Today: Serene Bansuri Harmony",
+    "The Dream: Peaceful Hopeful Horizons"
+  ];
+
+  // Authentic Bansuri Pitch Scale (Key of D Bamboo Flute - Mohanam / Yaman / Pahadi Svaras)
+  // D4=293.66, E4=329.63, F#4=369.99, G#4=415.30, A4=440.00, B4=493.88, C#5=554.37, D5=587.33, E5=659.25, F#5=739.99
+  const SVARAS = {
+    Sa:  293.66,
+    Ri:  329.63,
+    Ga:  369.99,
+    tGa: 415.30, // Teevra Ma / Ga variant
+    Pa:  440.00,
+    Dha: 493.88,
+    Ni:  554.37,
+    Sa2: 587.33,
+    Ri2: 659.25,
+    Ga2: 739.99
+  };
+
+  // Organic Raga Melodic Phrases (Evolving, non-repeating continuous composition)
+  const RAGA_PHRASES = {
+    opening: [
+      [SVARAS.Sa, SVARAS.Ri, SVARAS.Ga, SVARAS.Pa],
+      [SVARAS.Pa, SVARAS.Dha, SVARAS.Sa2, SVARAS.Dha, SVARAS.Pa],
+      [SVARAS.Ga, SVARAS.Ri, SVARAS.Sa]
+    ],
+    nanna: [
+      [SVARAS.Sa, SVARAS.tGa, SVARAS.Pa, SVARAS.Ni, SVARAS.Sa2],
+      [SVARAS.Sa2, SVARAS.Ni, SVARAS.Dha, SVARAS.Pa],
+      [SVARAS.tGa, SVARAS.Pa, SVARAS.Ga, SVARAS.Ri, SVARAS.Sa]
+    ],
+    amma: [
+      [SVARAS.Pa, SVARAS.Ga, SVARAS.Ri, SVARAS.Sa],
+      [SVARAS.Sa, SVARAS.Ri, SVARAS.Ga, SVARAS.Pa, SVARAS.Dha],
+      [SVARAS.Sa2, SVARAS.Dha, SVARAS.Pa, SVARAS.Ga, SVARAS.Sa]
+    ],
+    parents: [
+      [SVARAS.Sa, SVARAS.Ga, SVARAS.Pa, SVARAS.Dha, SVARAS.Sa2],
+      [SVARAS.Ri2, SVARAS.Sa2, SVARAS.Dha, SVARAS.Pa],
+      [SVARAS.Ga2, SVARAS.Sa2, SVARAS.Dha, SVARAS.Pa, SVARAS.Ga, SVARAS.Sa]
+    ]
+  };
+
+  function initAudio(){
+    if(!audioCtx){
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioCtx();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime); // Silent start for 3-5s fade-in
+      masterGain.connect(audioCtx.destination);
+    }
+    if(audioCtx.state === 'suspended'){
+      audioCtx.resume();
+    }
+  }
+
+  /* ── 1. REALISTIC ACOUSTIC INDIAN BANSURI FLUTE SYNTHESIZER ─────────── */
+  // Recreates authentic bamboo flute physics:
+  // - Fundamental sine wave + 2nd harmonic (octave) + triangle body tone
+  // - Real embouchure air puff noise (bandpass filtered white noise at note attack)
+  // - Meend (pitch glides between notes)
+  // - Expressive 5.0Hz vibrato ramping up naturally during sustained notes
+  function playAcousticBansuriNote(targetFreq, startFreq=null, vol=0.07, duration=3.5, hasSecondFlute=false){
+    if(!isPlaying || !audioCtx) return;
+    try {
+      const now = audioCtx.currentTime;
+
+      // Primary Oscillators: Fundamental (Sine), Octave Harmonic (Sine), Body (Triangle)
+      const oscCore = audioCtx.createOscillator();
+      const oscHarmonic = audioCtx.createOscillator();
+      const oscBody = audioCtx.createOscillator();
+      const harmGain = audioCtx.createGain();
+      const bodyGain = audioCtx.createGain();
+
+      oscCore.type = 'sine';
+      oscHarmonic.type = 'sine';
+      oscBody.type = 'triangle';
+
+      const startPitch = startFreq ? startFreq : targetFreq;
+      oscCore.frequency.setValueAtTime(startPitch, now);
+      oscHarmonic.frequency.setValueAtTime(startPitch * 2, now);
+      oscBody.frequency.setValueAtTime(startPitch, now);
+
+      // Meend (Pitch Glide / Bend) for organic Indian classical expression
+      if(startFreq && startFreq !== targetFreq){
+        oscCore.frequency.setTargetAtTime(targetFreq, now + 0.08, 0.16);
+        oscHarmonic.frequency.setTargetAtTime(targetFreq * 2, now + 0.08, 0.16);
+        oscBody.frequency.setTargetAtTime(targetFreq, now + 0.08, 0.16);
+      }
+
+      // Expressive Vibrato LFO (5.0Hz sine, swells naturally after note stabilizes)
+      const vibrato = audioCtx.createOscillator();
+      const vibratoGain = audioCtx.createGain();
+      vibrato.type = 'sine';
+      vibrato.frequency.setValueAtTime(5.0, now);
+      vibratoGain.gain.setValueAtTime(0.0001, now);
+      vibratoGain.gain.linearRampToValueAtTime(targetFreq * 0.014, now + 0.7); // Delayed vibrato swell
+      vibrato.connect(oscCore.frequency);
+      vibrato.connect(oscBody.frequency);
+
+      // Bamboo Embouchure Air Hiss (Bandpass filtered air noise tracking pitch)
+      const noiseLen = Math.floor(audioCtx.sampleRate * 0.4);
+      const noiseBuf = audioCtx.createBuffer(1, noiseLen, audioCtx.sampleRate);
+      const noiseData = noiseBuf.getChannelData(0);
+      for(let i = 0; i < noiseLen; i++) noiseData[i] = (Math.random() * 2 - 1);
+      
+      const noiseSrc = audioCtx.createBufferSource();
+      noiseSrc.buffer = noiseBuf;
+      const noiseFilter = audioCtx.createBiquadFilter();
+      noiseFilter.type = 'bandpass';
+      noiseFilter.frequency.setValueAtTime(Math.min(targetFreq * 1.6, 2200), now);
+      noiseFilter.Q.value = 3.5;
+
+      const noiseGain = audioCtx.createGain();
+      noiseGain.gain.setValueAtTime(0.001, now);
+      noiseGain.gain.linearRampToValueAtTime(vol * 0.16, now + 0.2); // Air puff at attack
+      noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+
+      noiseSrc.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(masterGain);
+      noiseSrc.start(now);
+
+      // Lowpass Filter for Warm Bamboo Acoustic Color
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(targetFreq * 2.6, now);
+
+      // Note Envelope Dynamics (Slow attack 0.6s, warm body, smooth 1.8s decay)
+      const noteGain = audioCtx.createGain();
+      noteGain.gain.setValueAtTime(0.001, now);
+      noteGain.gain.linearRampToValueAtTime(vol, now + 0.6);
+      noteGain.gain.setTargetAtTime(vol * 0.75, now + 1.0, 0.7);
+      noteGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      // Mix Harmonics
+      harmGain.gain.value = 0.15;
+      bodyGain.gain.value = 0.25;
+
+      oscCore.connect(filter);
+      oscHarmonic.connect(harmGain);
+      harmGain.connect(filter);
+      oscBody.connect(bodyGain);
+      bodyGain.connect(filter);
+
+      filter.connect(noteGain);
+      noteGain.connect(masterGain);
+
+      vibrato.start(now);
+      oscCore.start(now);
+      oscHarmonic.start(now);
+      oscBody.start(now);
+
+      vibrato.stop(now + duration + 0.2);
+      oscCore.stop(now + duration + 0.2);
+      oscHarmonic.stop(now + duration + 0.2);
+      oscBody.stop(now + duration + 0.2);
+
+      // Optional Second Soft Resonance Flute (plays lower fifth for warm emotional depth)
+      if(hasSecondFlute){
+        playAcousticBansuriNote(targetFreq * 0.667, null, vol * 0.35, duration * 1.1, false);
+      }
+    } catch(e){}
+  }
+
+  /* ── 2. VERY SUBTLE SACRED TANPURA DRONE ───────────────────────────── */
+  function playSubtleTanpura(vol=0.02, duration=6.0){
+    if(!isPlaying || !audioCtx) return;
+    try {
+      const now = audioCtx.currentTime;
+      const tones = [146.83, 220.00, 293.66]; // D3, A3, D4
+      tones.forEach((freq, idx) => {
+        const osc = audioCtx.createOscillator();
+        const filter = audioCtx.createBiquadFilter();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq + (Math.random() * 0.3 - 0.15), now);
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(350 + idx * 50, now);
+
+        const delay = idx * 0.5;
+        gain.gain.setValueAtTime(0.0001, now + delay);
+        gain.gain.linearRampToValueAtTime(vol, now + delay + 1.5);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + delay + duration);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+
+        osc.start(now + delay);
+        osc.stop(now + delay + duration + 0.2);
+      });
+    } catch(e){}
+  }
+
+  /* ── 3. EXTREMELY SOFT DISTANT TEMPLE BELL ─────────────────────────── */
+  function playDistantTempleBell(vol=0.012){
+    if(!isPlaying || !audioCtx) return;
+    try {
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(2637, now); // High glass chime
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(vol, now + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.00001, now + 4.5);
+
+      osc.connect(gain);
+      gain.connect(masterGain);
+
+      osc.start(now);
+      osc.stop(now + 4.6);
+    } catch(e){}
+  }
+
+  /* ── CONTINUOUS GENERATIVE MELODIC COMPOSITION ──────────────────────── */
+  let phraseIdx = 0;
+  let noteIdxInPhrase = 0;
+  let currentMelodySet = RAGA_PHRASES.opening;
+  let lastFlutePitch = null;
+
+  function tickBansuriMelody(){
+    if(!isPlaying || !audioCtx) return;
+
+    // Check if user scrolled down to Final Tribute screen (#contact)
+    const tributeSec = document.getElementById('contact');
+    if(tributeSec){
+      const rect = tributeSec.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.65){
+        // Gradually fade flute into complete silence for final tribute
+        masterGain.gain.setTargetAtTime(0.001, audioCtx.currentTime, 2.5);
+        trackLabel.textContent = "Final Tribute: Complete Silence";
+        chapterLabel.textContent = "AMMA & NANNA — I LOVE YOU FOREVER. ♾️";
+        return;
+      } else {
+        const userVol = parseFloat(volSlider.value);
+        masterGain.gain.setTargetAtTime(userVol, audioCtx.currentTime, 1.2);
+      }
+    }
+
+    const pIdx = window.ANANTA_CURRENT_PAGE || 0;
+    currentChapterIdx = pIdx;
+    trackLabel.textContent = "Krishna Bansuri: ON";
+    chapterLabel.textContent = CHAPTER_NAMES[pIdx] || CHAPTER_NAMES[0];
+
+    // Select Raga phrase style based on chapter without restarting composition
+    if(pIdx === 1 || pIdx === 5) currentMelodySet = RAGA_PHRASES.nanna;
+    else if(pIdx === 2 || pIdx === 6) currentMelodySet = RAGA_PHRASES.amma;
+    else if(pIdx === 3 || pIdx === 4 || pIdx === 7 || pIdx === 8) currentMelodySet = RAGA_PHRASES.parents;
+    else currentMelodySet = RAGA_PHRASES.opening;
+
+    const currentPhrase = currentMelodySet[phraseIdx % currentMelodySet.length];
+    const targetPitch = currentPhrase[noteIdxInPhrase % currentPhrase.length];
+
+    noteIdxInPhrase++;
+    if(noteIdxInPhrase >= currentPhrase.length){
+      noteIdxInPhrase = 0;
+      phraseIdx++;
+    }
+
+    // Play solo bansuri note with Meend glide
+    const noteDuration = 3.0 + Math.random() * 1.2;
+    const hasHarmony = (pIdx === 4 || pIdx === 7); // Emotional chapters have soft dual flute
+    playAcousticBansuriNote(targetPitch, lastFlutePitch, 0.07, noteDuration, hasHarmony);
+    lastFlutePitch = targetPitch;
+
+    // Trigger subtle Tanpura drone periodically
+    if(Math.random() < 0.4){
+      playSubtleTanpura(0.02, 6.2);
+    }
+
+    // Extremely soft temple bell chime in devotional sections
+    if((pIdx === 1 || pIdx === 5) && Math.random() < 0.25){
+      playDistantTempleBell(0.012);
+    }
+  }
+
+  /* ── TOGGLE & PREFERENCE CONTROLS ───────────────────────────────── */
+  function toggleMusic(){
+    initAudio();
+    isPlaying = !isPlaying;
+
+    if(isPlaying){
+      btnIcon.textContent = "⏸";
+      trackLabel.textContent = "Krishna Bansuri: ON";
+      volContainer.style.display = "flex";
+      localStorage.setItem('ananta_music_pref', 'on');
+
+      const targetVol = parseFloat(volSlider.value);
+      // 3–5 second gentle linear ramp fade-in
+      masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(targetVol, audioCtx.currentTime + 4.0);
+
+      tickBansuriMelody();
+      soundscapeTimer = setInterval(tickBansuriMelody, 3400); // Relaxed slow tempo (55-70 BPM)
+    } else {
+      btnIcon.textContent = "🎵";
+      trackLabel.textContent = "Krishna Bansuri: OFF";
+      chapterLabel.textContent = "Click to listen";
+      volContainer.style.display = "none";
+      localStorage.setItem('ananta_music_pref', 'off');
+
+      clearInterval(soundscapeTimer);
+      if(masterGain && audioCtx){
+        // 3–5 second gentle fade-out
+        masterGain.gain.setTargetAtTime(0, audioCtx.currentTime, 1.2);
+      }
+    }
+  }
+
+  playBtn?.addEventListener('click', toggleMusic);
+
+  volSlider?.addEventListener('input', function(){
+    if(masterGain && audioCtx){
+      masterGain.gain.setTargetAtTime(parseFloat(this.value), audioCtx.currentTime, 0.1);
+    }
+  });
+
+  // Respect saved preference on initial click
+  const savedPref = localStorage.getItem('ananta_music_pref');
+  if(savedPref === 'on'){
+    chapterLabel.textContent = "Saved: ON (Click 🎵 to play)";
+  }
+
+  // Track page turn index globally
+  window.ANANTA_CURRENT_PAGE = 0;
+  setInterval(() => {
+    if(typeof idx !== 'undefined'){
+      window.ANANTA_CURRENT_PAGE = idx;
+    }
+  }, 300);
+
+})();
+</script>
+
+</body>
+</html>
