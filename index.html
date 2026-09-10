@@ -1432,10 +1432,6 @@ const a=el('button','sb-zone sb-prev'),b=el('button','sb-zone sb-next');
 
 a.setAttribute('aria-label','previous page');b.setAttribute('aria-label','next page');
 
-a.onclick = (e) => { if(e && e.stopPropagation) e.stopPropagation(); step('prev'); };
-
-b.onclick = (e) => { if(e && e.stopPropagation) e.stopPropagation(); step('next'); };
-
 a.onclick = (e) => { if(e) e.stopPropagation(); step('prev'); };
 
 b.onclick = (e) => { if(e) e.stopPropagation(); step('next'); };
@@ -1560,7 +1556,7 @@ s.v+= (-s.k*x - s.c*s.v)*dt;
 
 turn.t+=s.v*dt;
 
-if(Math.abs(turn.t-s.target)<0.002&&Math.abs(s.v)<0.02){
+if(Math.abs(turn.t-s.target)<0.008 || (s.target===1 && turn.t>=0.99) || (s.target===0 && turn.t<=0.01)){
 
 turn.t=s.target;spring=null;
 
@@ -1704,11 +1700,13 @@ stage.addEventListener('pointerdown',e=>{
 
 if(e.button!==0)return;
 
+if(e.target.closest('.sb-arrow, #sbLeft, #sbRight, .sb-tools, button')) return;
+
 e.preventDefault(); /* no text selection, no image drag */
 
-const onBook=e.target.closest('.sb-zone');
+const onBook=e.target.closest('.sb-zone, .sb-book, .sb-tilt, .sb-3d');
 
-stage.setPointerCapture(e.pointerId);
+try { stage.setPointerCapture(e.pointerId); } catch(_) {}
 
 hideHint();
 
