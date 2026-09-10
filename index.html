@@ -2252,7 +2252,11 @@ return;
 
 }
 
-setTimeout(startIntro,220);
+/* Instant interactive readiness */
+  introOn = false;
+  paint();
+  syncZoom();
+  restLoupe();
 
 })();
 
@@ -2260,7 +2264,32 @@ setTimeout(startIntro,220);
 
 // Keyboard Navigation for Page Turning & Loupe Controls
 
-window.addEventListener('keydown', (e) => {
+
+  // Mobile Touch Swipe Listener for 100% smooth page turns
+  let touchStartX = 0;
+  let touchStartY = 0;
+  stage.addEventListener('touchstart', (e) => {
+    if(e.touches && e.touches.length === 1){
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, {passive: true});
+
+  stage.addEventListener('touchend', (e) => {
+    if(e.changedTouches && e.changedTouches.length === 1){
+      const diffX = e.changedTouches[0].clientX - touchStartX;
+      const diffY = e.changedTouches[0].clientY - touchStartY;
+      if(Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)){
+        if(diffX < 0){
+          step('next');
+        } else {
+          step('prev');
+        }
+      }
+    }
+  }, {passive: true});
+
+  window.addEventListener('keydown', (e) => {
 
 if (e.key === 'ArrowRight' || e.key === 'PageDown') {
 
